@@ -1,5 +1,7 @@
 ---
 import '~/styles/global.css'
+import { signInUrl } from '@chirag127/astro-shell/auth-gate'
+import { pricingUrl } from '@chirag127/astro-shell/pricing-url'
 
 interface Props {
   title?: string
@@ -8,6 +10,8 @@ interface Props {
 
 const { title = 'Oriz Universal Converter — Whatever you have. Whatever you need. In your browser.', description = 'Units, currency, timezone, number bases. Live exchange rates. Meeting planner.' } = Astro.props
 const canonical = new URL(Astro.url.pathname, 'https://convert.oriz.in').toString()
+const pricingHref = pricingUrl('oriz-shift-convert-tools-app')
+const signInHref = signInUrl()
 ---
 <!doctype html>
 <html lang="en">
@@ -34,8 +38,8 @@ const canonical = new URL(Astro.url.pathname, 'https://convert.oriz.in').toStrin
       <nav>
         <a href="/">tools</a>
         <a href="/about/">about</a>
-        <a href="/pricing/">pricing</a>
-        <a href="https://auth.oriz.in/sign-in">sign in</a>
+        <a href={pricingHref}>pricing</a>
+        <a href={signInHref}>sign in</a>
       </nav>
     </header>
     <main id="main"><slot /></main>

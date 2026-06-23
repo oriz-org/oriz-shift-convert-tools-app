@@ -41,7 +41,7 @@ header.site {
 }
 header.site .wordmark { font-family: var(--font-display); font-weight: 600; font-size: 1.125rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
 header.site nav { display: flex; gap: 1.25rem; font-size: 0.875rem; }
-header.site nav a { color: var(--muted); text-decoration: none; }
+header.site nav a { color: var(--muted); text-decoration: none; min-height: 32px; padding: 6px 0; display: inline-flex; align-items: center; }
 header.site nav a:hover { color: var(--ink); }
 
 footer.site {
